@@ -1,0 +1,8 @@
+# The Ridge Arcade paper log, June 2026
+Ren,Star Racer,8400
+Ada,Pixel Jump,4300
+
+Ren,Pixel Jump,5100
+# Mira's disputed run was removed
+Mira,Star Racer,9100
+Bo,Pumpkin Patch,2400
