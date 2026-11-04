@@ -10,14 +10,15 @@ top_scores and plays_by_game get no given tests: write those in the
 marked section at the bottom of this file before you implement them.
 For each function, list its ordinary case, the boundaries where its
 answer changes, and the cases where two rules act at once, then write
-two or three tests per function (a single assert statement each),
-watch them fail, and only then implement.
+one test per case (a single assert statement each), watch them fail,
+and only then implement.
 """
 
 import tempfile
 from pathlib import Path
 
-from arcade import load_scores, parse_play, read_plays, save_scores
+from arcade import load_scores, parse_play, plays_by_game, read_plays
+from arcade import save_scores, top_scores
 
 BOARD = [
     {"player": "Ren", "game": "Star Racer", "points": 8400},
@@ -49,7 +50,8 @@ def test_ordinary_line_gives_tuple_with_int_points():
 
 def test_surrounding_spaces_and_newline_are_stripped():
     # Boundary: the newline is part of the line the file hands over.
-    assert parse_play("  Ren , Pixel Jump ,5100\n") == ("Ren", "Pixel Jump", 5100)
+    expected = ("Ren", "Pixel Jump", 5100)
+    assert parse_play("  Ren , Pixel Jump ,5100\n") == expected
 
 
 def test_blank_line_gives_none():

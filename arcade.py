@@ -1,3 +1,5 @@
+import json
+
 PLAYS_PATH = "plays.txt"
 SCORES_PATH = "scores.json"
 
