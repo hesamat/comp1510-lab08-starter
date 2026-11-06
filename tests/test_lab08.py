@@ -14,6 +14,7 @@ one test per case (a single assert statement each), watch them fail,
 and only then implement.
 """
 
+import pytest
 import tempfile
 from pathlib import Path
 
@@ -68,6 +69,13 @@ def test_comment_line_gives_none():
 def test_indented_comment_also_skipped():
     # Two rules at once: strip first, then the # test still applies.
     assert parse_play("  # note\n") is None
+
+
+def test_malformed_line_raises_value_error():
+    # Edge: a line that is neither a play, nor blank, nor # cannot
+    # parse, and the raise names the bad line.
+    with pytest.raises(ValueError):
+        parse_play("Ren,Star Racer")
 
 
 # ------------------------------------------------------------------
