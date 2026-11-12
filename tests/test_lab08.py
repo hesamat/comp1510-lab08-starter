@@ -9,9 +9,9 @@ you submit.
 top_scores and plays_by_game get no given tests: write those in the
 marked section at the bottom of this file before you implement them.
 For each function, list its ordinary case, the boundaries where its
-answer changes, and the cases where two rules act at once, then write
-one test per case (a single assert statement each), watch them fail,
-and only then implement.
+answer changes, and the cases where two rules act at once. Write one
+test per case (a single assert statement each), watch them fail, and
+only then implement.
 """
 
 import pytest
